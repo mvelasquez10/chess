@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Chess.Desktop.Player"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Chess.Desktop"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="100" d:Background="White">
+    <Grid Height="auto" Width="100">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Image x:Name="PLayerLogo" Source="/Resources/KW.png" Width="60" />
+        <TextBlock x:Name="PlayerStatus" Grid.Row="1" Text="" VerticalAlignment="Center" TextAlignment="Center" FontSize="22" />
+        <TextBlock x:Name="PlayerCheck" Visibility="Hidden" Grid.Row="2" Text="CHECK!" VerticalAlignment="Center" TextAlignment="Center" FontSize="22" />
+        <Border Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,20">
+            <WrapPanel x:Name="PLayerCaptures" HorizontalAlignment="Center" />
+        </Border>
+        <StackPanel Grid.Row="4" Margin="0,0,0,20" Orientation="Horizontal" HorizontalAlignment="Center">
+            <CheckBox x:Name="PlayerDraw"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" RenderTransformOrigin="0.5,0.5">
+                <CheckBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
+                    </TransformGroup>
+                </CheckBox.RenderTransform>
+            </CheckBox>
+            <TextBlock Text="Draw?" FontSize="18" Margin="10,0,0,0" />
+        </StackPanel>
+    </Grid>
+</UserControl>
